@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+    	"outFile": "build/dom.js"
+    },
+    "files": [
+        "src/el.ts",
+        "src/main.ts",
+    ]
+}
