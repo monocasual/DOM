@@ -1,3 +1,6 @@
+/// <reference path="main.ts" />
+
+
 namespace DOM
 {
 	export class El 
@@ -11,27 +14,27 @@ namespace DOM
 
 		append(el: El) : void
 		{
-			this.getParent().appendChild(el.node);
+			this.node.parentNode.appendChild(el.node);
 		}
 
 		remove() : void
 		{
-			this.getParent().removeChild(this.node);
+			this.node.parentNode.removeChild(this.node);
 		}
 
-		getParent()
+		getParent() : El
 		{
-			return this.node.parentNode;
+			return new El(this.node.parentNode);
 		}
 
-		getChildren()
+		getChildren() : Array<El>
 		{
-			return this.node.children;
+			return DOM.nodeListToEls(this.node.children);
 		}
 
-		find(selector: string)
+		find(selector: string) : Array<El>
 		{
-			return this.node.querySelectorAll(selector);
+			return DOM.nodeListToEls(this.node.querySelectorAll(selector));
 		}
 
 		addClass(c: string) : void

@@ -1,12 +1,16 @@
 namespace DOM
 {
-	export function find(selector: string) 
+	export function nodeListToEls(nodeList: any) : Array<El>
 	{
 		let out: Array<El> = [];
-		let els: NodeList = document.querySelectorAll(selector);
-		for (let i = 0; i < els.length; i++)
-			out.push(new El(els[i]));
+		for (let i = 0; i < nodeList.length; i++)
+			out.push(new El(nodeList[i]));
 		return out;
+	}
+
+	export function find(selector: string) : Array<El>
+	{
+		return nodeListToEls(document.querySelectorAll(selector));
 	}
 
 	/* ready
