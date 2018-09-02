@@ -5,7 +5,7 @@ namespace DOM
 {
 	export class El 
 	{
-		node: HTMLElement;
+		private node: HTMLElement;
 		
 		constructor(node: Node) 
 		{
