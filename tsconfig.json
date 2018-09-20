@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-    	"outFile": "build/dom.js"
-    },
-    "files": [
-        "src/el.ts",
-        "src/main.ts",
-    ]
+	"compilerOptions": {
+		"outFile": "build/monodom.js"
+	},
+	"files": [
+		"src/el.ts",
+		"src/main.ts",
+	]
 }
